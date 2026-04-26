@@ -72,9 +72,7 @@ class AutoUnbanner:
 
             time.sleep(5)
 
-    # ------------------------------------------------------------------ #
-    #  Internal                                                            #
-    # ------------------------------------------------------------------ #
+    #  Internal                                                           
 
     def _do_unban(self, ip: str) -> None:
         """Unban an IP, write audit log, send Slack alert."""
