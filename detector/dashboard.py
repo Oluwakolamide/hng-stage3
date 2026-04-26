@@ -27,9 +27,8 @@ from flask import Flask, jsonify, render_template_string
 
 logger = logging.getLogger("dashboard")
 
-# --------------------------------------------------------------------------- #
 #  HTML template — served at /                                                 #
-# --------------------------------------------------------------------------- #
+
 
 DASHBOARD_HTML = """<!DOCTYPE html>
 <html lang="en">
@@ -70,7 +69,7 @@ DASHBOARD_HTML = """<!DOCTYPE html>
 </style>
 </head>
 <body>
-<h1>🛡️ HNG Anomaly Detection Engine &mdash; Live Dashboard</h1>
+<h1>HNG Anomaly Detection Engine &mdash; Live Dashboard</h1>
 
 <div class="grid">
   <div class="card"><div class="label">Global Req/s</div><div class="value val-blue" id="g-rps">—</div></div>
