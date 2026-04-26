@@ -1,9 +1,9 @@
 # HNG Stage 3 — Anomaly Detection Engine
 
-**Live Metrics Dashboard:** `http://monitor.yourdomain.com` *(fill in before submission)*
-**Server IP:** `x.x.x.x` *(fill in before submission)*
-**GitHub Repo:** `https://github.com/yourusername/hng-stage3` *(public)*
-**Blog Post:** `https://medium.com/@yourusername/how-i-built-a-ddos-detection-engine` *(link here)*
+**Live Metrics Dashboard:** `http://15.222.216.23:8080` 
+**Server IP:** `15.222.216.23`
+**GitHub Repo:** `https://github.com/yourusername/hng-stage3`
+**Blog Post:** `https://medium.com/@yourusername/how-i-built-a-ddos-detection-engine`
 
 ---
 
