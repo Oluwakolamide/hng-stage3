@@ -27,7 +27,7 @@ from flask import Flask, jsonify, render_template_string
 
 logger = logging.getLogger("dashboard")
 
-#  HTML template — served at /                                                 #
+#  HTML template — served at /                                                 
 
 
 DASHBOARD_HTML = """<!DOCTYPE html>
