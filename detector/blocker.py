@@ -31,9 +31,7 @@ class IPBlocker:
         self.banned_ips: dict = {}
         self._lock = threading.Lock()
 
-    # ------------------------------------------------------------------ #
-    #  State queries                                                       #
-    # ------------------------------------------------------------------ #
+    #  State queries                                                       
 
     def is_banned(self, ip: str) -> bool:
         with self._lock:
@@ -43,9 +41,7 @@ class IPBlocker:
         with self._lock:
             return dict(self.banned_ips)
 
-    # ------------------------------------------------------------------ #
-    #  Ban                                                                 #
-    # ------------------------------------------------------------------ #
+    #  Ban                                                                 
 
     def ban_ip(self, ip: str) -> int:
         """
@@ -81,9 +77,7 @@ class IPBlocker:
         logger.info(f"Banned {ip} duration={duration}s level={level + 1}")
         return duration
 
-    # ------------------------------------------------------------------ #
-    #  Unban                                                               #
-    # ------------------------------------------------------------------ #
+    #  Unban                                                               
 
     def unban_ip(self, ip: str) -> bool:
         """Remove iptables rule and clear ban state. Returns True on success."""
@@ -95,10 +89,8 @@ class IPBlocker:
         self._iptables_delete(ip)
         logger.info(f"Unbanned {ip}")
         return True
-
-    # ------------------------------------------------------------------ #
+      
     #  Audit log                                                           #
-    # ------------------------------------------------------------------ #
 
     def write_audit(
         self,
@@ -130,9 +122,7 @@ class IPBlocker:
         except Exception:
             logger.warning("Could not write audit log entry")
 
-    # ------------------------------------------------------------------ #
-    #  iptables helpers                                                    #
-    # ------------------------------------------------------------------ #
+    #  iptables helpers                                                    
 
     def _iptables_insert(self, ip: str) -> None:
         """Insert DROP rule at top of INPUT chain."""
