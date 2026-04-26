@@ -3,7 +3,7 @@
 **Live Metrics Dashboard:** `http://15.222.216.23:8080` 
 **Server IP:** `15.222.216.23`
 **GitHub Repo:** `https://github.com/Oluwakolamide/hng-stage3`
-**Blog Post:** `https://medium.com/@yourusername/how-i-built-a-ddos-detection-engine`
+**Blog Post:** `https://medium.com/@idowuoluwakolamide/how-i-built-a-real-time-ddos-detection-engine-from-scratch-a5f5691a8ddf`
 
 ---
 
