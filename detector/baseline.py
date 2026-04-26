@@ -60,9 +60,7 @@ class BaselineTracker:
 
         self._lock = threading.Lock()
 
-    # ------------------------------------------------------------------ #
-    #  Public API                                                          #
-    # ------------------------------------------------------------------ #
+    #  Public API                                              
 
     def record_request(self, now: float, is_error: bool = False) -> None:
         """Called by the monitor for every parsed log line."""
@@ -169,10 +167,8 @@ class BaselineTracker:
             except Exception:
                 logger.exception("Baseline recalculation failed")
             time.sleep(self.recalc_interval)
-
-    # ------------------------------------------------------------------ #
-    #  Private helpers                                                     #
-    # ------------------------------------------------------------------ #
+          
+    #  Private helpers                                                    
 
     def _flush_second(self) -> None:
         """Lock must NOT be held when calling this."""
