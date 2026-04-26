@@ -23,9 +23,7 @@ class SlackNotifier:
         # Fire-and-forget: send in a daemon thread so monitor loop isn't blocked
         self._pool_lock = threading.Lock()
 
-    # ------------------------------------------------------------------ #
-    #  Public alert methods                                                #
-    # ------------------------------------------------------------------ #
+    #  Public alert methods                                               
 
     def send_ban_alert(
         self,
@@ -84,9 +82,7 @@ class SlackNotifier:
         )
         self._fire(text)
 
-    # ------------------------------------------------------------------ #
-    #  Internal                                                            #
-    # ------------------------------------------------------------------ #
+    #  Internal                                                           
 
     def _fire(self, text: str) -> None:
         """Send in a background daemon thread to avoid blocking the monitor."""
