@@ -34,9 +34,7 @@ class AnomalyDetector:
         self._last_global_alert: float = 0.0
         self._lock = threading.Lock()
 
-    # ------------------------------------------------------------------ #
-    #  Per-IP check                                                        #
-    # ------------------------------------------------------------------ #
+    #  Per-IP check                                                        
 
     def check_ip(self, ip: str, ip_rps: float, ip_error_rps: float) -> tuple:
         """
@@ -92,9 +90,7 @@ class AnomalyDetector:
 
         return False, ""
 
-    # ------------------------------------------------------------------ #
-    #  Global traffic check                                                #
-    # ------------------------------------------------------------------ #
+    #  Global traffic check                                                
 
     def check_global(self, global_rps: float) -> tuple:
         """
