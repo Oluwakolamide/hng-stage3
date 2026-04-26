@@ -63,9 +63,7 @@ class LogMonitor:
         # --- Global alert dedup ---
         self._last_global_alert_condition: str = ""
 
-    # ------------------------------------------------------------------ #
-    #  Public API (called by dashboard)                                   #
-    # ------------------------------------------------------------------ #
+    #  Public API (called by dashboard)                                   
 
     def get_global_rps(self) -> float:
         now = time.time()
@@ -89,9 +87,7 @@ class LogMonitor:
                 rates[ip] = len(window) / self.window_seconds
         return sorted(rates.items(), key=lambda x: x[1], reverse=True)[:n]
 
-    # ------------------------------------------------------------------ #
-    #  Log processing                                                      #
-    # ------------------------------------------------------------------ #
+    #  Log processing                                                     
 
     def process_line(self, line: str) -> None:
         line = line.strip()
@@ -159,9 +155,7 @@ class LogMonitor:
             mean, _, _, _ = self.baseline.get_stats()
             self.notifier.send_global_alert(global_condition, global_rps, mean)
 
-    # ------------------------------------------------------------------ #
-    #  Log tail                                                            #
-    # ------------------------------------------------------------------ #
+    #  Log tail                                                           
 
     def run(self) -> None:
         """
@@ -202,9 +196,7 @@ class LogMonitor:
                 logger.error(f"Log file error: {e} — retrying in 2s")
                 time.sleep(2)
 
-    # ------------------------------------------------------------------ #
-    #  Helpers                                                             #
-    # ------------------------------------------------------------------ #
+    #  Helpers                                                            
 
     def _evict(self, window: deque, now: float) -> None:
         """
