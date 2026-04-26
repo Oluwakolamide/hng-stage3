@@ -1,0 +1,28 @@
+slack:
+  webhook_url: "placeholder"
+
+nginx:
+  log_path: "/var/log/nginx/hng-access.log"
+
+detection:
+  window_seconds: 60          # Sliding window duration
+  baseline_window_minutes: 30  # Rolling baseline window
+  baseline_recalc_interval: 60 # Recalculate every N seconds
+  zscore_threshold: 3.0        # Z-score trigger
+  rate_multiplier: 5.0         # Rate multiplier trigger (5x mean)
+  error_rate_multiplier: 3.0   # Error surge trigger (3x error mean)
+  floor_rps: 1.0               # Minimum baseline mean (never goes below this)
+  min_hour_samples: 120        # Min per-second samples before preferring hour slot
+  global_alert_cooldown: 60    # Seconds between global anomaly alerts
+
+# Backoff unban schedule in seconds: 10min, 30min, 2hr, then permanent
+unban_schedule:
+  - 600
+  - 1800
+  - 7200
+
+dashboard:
+  port: 8080
+  refresh_interval: 3  # seconds
+
+audit_log: "/var/log/detector/audit.log"
